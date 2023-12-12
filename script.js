@@ -1,6 +1,6 @@
 //===========VARIABLES==============
 
-const btn = document.querySelectorAll('.controls .control')
+const btn = document.querySelectorAll('.controls .control .section')
 const sections = document.querySelectorAll('.section')
 const secBtns = document.querySelectorAll('.controls')
 const allSection = document.querySelector('.main-content')
@@ -20,16 +20,6 @@ xS = w.innerWidth || e.clientWidth || g.clientWidth,
 yS = w.innerHeight|| e.clientHeight|| g.clientHeight;
 console.log((xS + ' × ' + yS));
 
-
-//do i remove this below?
-window.onload = function () {
-  Particles.init({
-    selector: ".particles-js"
-  })
-}
-// this^^
-
-
 var particles = Particles.init({
   selector: ".particles-js",
   color: ["#ff9000", "#ff0266", "#00ffff"],
@@ -47,7 +37,7 @@ var particles = Particles.init({
       }
     }
   ]
-})
+});
 
 
 
