@@ -90,8 +90,6 @@ allSection.onclick = function (e) {
     }
 }
 
-
-}
 PageTransitions()
 
 
