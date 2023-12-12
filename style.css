@@ -1588,7 +1588,6 @@
     background-position: 50% 50%;
   }
   
-  
   @media (max-width: 490px) {
     .header-content .right-header .name .loader span {
       font-size: 5vw !important;

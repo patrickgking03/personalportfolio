@@ -20,11 +20,16 @@ xS = w.innerWidth || e.clientWidth || g.clientWidth,
 yS = w.innerHeight|| e.clientHeight|| g.clientHeight;
 console.log((xS + ' × ' + yS));
 
+
+//do i remove this below?
 window.onload = function () {
   Particles.init({
     selector: ".particles-js"
   })
 }
+// this^^
+
+
 var particles = Particles.init({
   selector: ".particles-js",
   color: ["#ff9000", "#ff0266", "#00ffff"],
@@ -48,16 +53,24 @@ var particles = Particles.init({
 
 //========PARTICLES BACKGROUND==========
 
-function PageTransitions(){
-    for(let i = 0; i < btn.length; i++){
-    
-    btn[i].onclick = function(){
-        let activeBtn = document.querySelectorAll('.active-btn')
-        activeBtn[0].className = activeBtn[0].className.replace('active-btn','')
-        this.className += 'active-btn'
-    //NOTE: THE "THIS" KEYWORD DOESN'T WORK ON ARROW FUNCTIONS
-    }
+function PageTransitions() {
+  for (let i = 0; i < btn.length; i++) {
+      btn[i].addEventListener('click', function() {
+          let currentBtn = document.querySelector('.active-btn');
+          currentBtn.classList.remove('active-btn');
+          this.classList.add('active-btn');
+
+          let currentSection = document.querySelector('.section.active');
+          currentSection.classList.remove('active');
+
+          let id = this.getAttribute('data-id');
+          let newSection = document.getElementById(id);
+          newSection.classList.add('active');
+      });
+  }
 }
+
+PageTransitions();
 
 //========SECTION ACTIVE CLASS=======
 
